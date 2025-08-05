@@ -14,7 +14,8 @@ pipeline {
 
         stage('Set Up Python Virtual Environment') {
             steps {
-                bat 'python -m venv venv'
+                // Use py to call Python if that's how it's registered
+                bat 'py -m venv venv'
                 bat '.\\venv\\Scripts\\pip install --upgrade pip'
                 bat '.\\venv\\Scripts\\pip install flask pandas numpy tensorflow'
             }
