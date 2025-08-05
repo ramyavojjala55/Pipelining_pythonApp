@@ -16,7 +16,7 @@ pipeline {
             steps {
                 // Use py to call Python if that's how it's registered
                 bat '"C:\\Users\\ramya\\AppData\\Local\\Programs\\Python\\Python310\\python.exe" -m venv venv'
-                bat '.\\venv\\Scripts\\pip install --upgrade pip'
+                bat '.\\venv\\Scripts\\python.exe -m pip install --upgrade pip'
                 bat '.\\venv\\Scripts\\pip install flask pandas numpy tensorflow'
             }
         }
