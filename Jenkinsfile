@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone GitHub Repo') {
             steps {
-                git 'https://github.com/ramyavojjala55/your-repo-name.git'
+                git credentialsId: 'github-https', url: 'https://github.com/ramyavojjala55/Pipelining_pythonApp.git'
             }
         }
 
@@ -16,7 +16,6 @@ pipeline {
             steps {
                 sh 'python3 -m venv $VENV'
                 sh './$VENV/bin/pip install --upgrade pip'
-                // You can use requirements.txt or list them here:
                 sh './$VENV/bin/pip install flask pandas numpy tensorflow'
             }
         }
