@@ -11,7 +11,7 @@ jobs:
 
     steps:
       # Step 1: Get your repo code
-      - name: Run Python Code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       # Step 2: Set up Python
