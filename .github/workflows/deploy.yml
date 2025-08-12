@@ -2,8 +2,6 @@ name: Deploy with Ngrok
 
 on:
   workflow_dispatch:  # Manual trigger
-  push:
-    branches: [ main ]  # or your default branch
 
 jobs:
   run-server:
@@ -42,5 +40,5 @@ jobs:
         curl --silent http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[0].public_url'
 
     - name: Keep alive
-      run: sleep 6h
+      run: sleep 10m
 
